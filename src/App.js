@@ -1,57 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Header from "./components/Header.js";
+import Body from "./components/Body.js";
 
 
-const Header = () => {
-    return (
-        <div className="header">
-            <div className="logo-container">
-                <img className="logo" src="https://marketplace.canva.com/EAFowsrK6x8/1/0/1600w/canva-red-and-yellow-catering-flat-illustrative-food-place-logo-rYbQJ_qtaz8.jpg"></img>
-            </div>
-            <div className="nav-items">
-        <ul>
-            <li>Home</li>
-            <li>About us</li>
-            <li>Contact us</li>
-            <li>Cart</li>
-        </ul>
-            </div>
-        </div>
-    )
-}
-const ResCard = (props) => {
 
-    return (
-        <div className="res-card">
-            <img className="res-logo" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf"/>
-            <h3>{props.resName}</h3>
-            <h4>{props.cuisines}</h4>
-            <h4>4.4 stars</h4>
-            <h4>38 mins</h4>
-        </div>
-    )
-}
-const Body = () => {
-    return (
-        <div className="body">
-        <div className="Search"> Search</div>
-        <div className="res-container"> 
-        <ResCard
-        resName= "random Foods"
-        cuisines="Biryani, North Indians"
-        />
-        <ResCard
-        resName= "Lodu Foods"
-        cuisines="land, loda paav"
-        />
-        <ResCard
-        resName= "res Foods"
-        cuisines= "paav,chomt"
-        />
-        </div>
-        </div>
-    )
-}
+
 const AppLayout = () => {
     return (
         <div className= "app">
@@ -64,6 +18,24 @@ const AppLayout = () => {
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<AppLayout/>);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // const heading = React.createElement("h1",
