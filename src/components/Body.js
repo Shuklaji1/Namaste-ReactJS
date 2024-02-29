@@ -1,7 +1,7 @@
 import ResCard from "./ResCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
-
+import { Link } from "react-router-dom";
 
 
 
@@ -89,14 +89,19 @@ const Body = () => {
                                 const filteredlist = ResList.filter(
                                     (res) => res.info.avgRating > 4.3
                                 );
-                                setResList(filteredlist);
+                                setFilterResList(filteredlist);
                                 }}>
                 Top-Rated Restaurants
             </button>
         </div>
         <div className="res-container"> 
         {FilterResList.map((rest) => (
-            <ResCard key={rest.info.id} resData = {rest}/>
+            <Link
+            className="link-res"
+            key={rest.info.id} 
+            to={"/restaurants/"+ rest.info.id}>
+            <ResCard resData = {rest}/>
+            </Link>
         ))}
         
         </div>
