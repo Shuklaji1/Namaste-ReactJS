@@ -75,3 +75,11 @@
     text-decoration: none;
     color: black;
 }
+
+.user-card{
+    padding: 10px;
+    border: 2px solid black;
+}
+.about{
+    background-color: gray;
+}
