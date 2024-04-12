@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const User = ({name, location, userhandle}) => {
@@ -6,6 +6,18 @@ const User = ({name, location, userhandle}) => {
     const [count, setcount] = useState(0);
     const [count1, setcount1] = useState(0);
 
+    useEffect(() =>{
+        //API Call
+        const timer = setInterval(() => {
+            console.log("namaste react op");
+        }, 1000);
+        return () => {
+            clearInterval(timer);
+        }
+
+    }, []);
+
+    
     const handleclick = () => {
         setcount(count + 1);
         setcount1(count1 + 2);

@@ -2,7 +2,7 @@ import ResCard from "./ResCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 
@@ -58,7 +58,16 @@ const Body = () => {
         setFilterResList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
 
-    // if(ResList == 0){
+    const onlineStatus = useOnlineStatus();
+    if(onlineStatus == false){
+        return(
+            <div className="offline-error">
+                <h1> Error - 404 </h1>
+                <h2> Looks like You are Offline</h2>
+            </div>
+        )
+    }
+    // if(ResList == 0){  
     //     return <Shimmer/>;
     // }
 

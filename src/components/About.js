@@ -1,7 +1,16 @@
 import User from "./User";
 import UserClass from "./UserClass";
-
-const About = () => {
+import React, {Component} from "react";
+class About extends Component {
+    constructor(props){
+        super(props);
+        
+    }
+    componentDidMount() {
+        
+     }
+    render(){
+        
     return (
         <div className="about">
             <h1>About</h1>
@@ -9,7 +18,8 @@ const About = () => {
             <User name={"Brijesh Shukla"} location= {"Kanpur"} userhandle= {"@brijeshshukla"}/>
             <UserClass name= {"Brishi Shukla"} location ={"Bengaluru"} userhandle={"@brishishukla"}/>
         </div>
-    );
+        );
+    };
 };
 
 export default About;
