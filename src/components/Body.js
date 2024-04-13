@@ -15,34 +15,7 @@ const Body = () => {
     //Local State variable   -- Super Powerful variable
     const [ResList,setResList] = useState([]);
     const [FilterResList,setFilterResList] = useState([]);
-    //Normal JS Variable
-    // let ResList = [
-    //     {data : {
-    //         id:"1",
-    //         name: "Domi",
-    //         cuisines:["Bug","Bir","chomt"],
-    //         costForTwo:4000,
-    //         deliveryTime:36,
-    //         avgRating: "4.5",
-    //     }},
-    //     {data : {
-    //         id:"2",
-    //         name: "KFC",
-    //         cuisines:["Bug","Bir","chomt"],
-    //         costForTwo:4000,
-    //         deliveryTime:36,
-    //         avgRating: "2.0",
-    //     }},
-    //     {data : {
-    //         id:"3",
-    //         name: "MCD",
-    //         cuisines:["Bug","Bir","chomt"],
-    //         costForTwo:4000,
-    //         deliveryTime:36,
-    //         avgRating: "4.5",
-    //     }}
-    
-    // ];
+
     useEffect(() => {
         fetchData();
     },[]);
@@ -74,16 +47,17 @@ const Body = () => {
     return ResList == 0 ? (
         <Shimmer/> ) : (
         <div className="body">
-        <div className="filter">
-            <div className="search">
+        <div className="filter flex">
+            <div className="search m-4 p-4 ">
             <input 
             type="text" 
-            className="search-box"
+            className="border border-solid border-black"
             value={searchText}
             onChange={(e) => {
                 setSearchText(e.target.value);
             }}/>
-            <button onClick={() => {
+            <button className="px-4 py-2 bg-green-200 m-4 rounded-lg"
+            onClick={() => {
             const filteredRes = ResList.filter(
                 (res) => res.info.name.toLowerCase().includes(searchText)
                 );
@@ -93,7 +67,8 @@ const Body = () => {
             >
                 Search</button>
             </div>
-            <button className="filter-btn" 
+            <div className="search m-4 p-4 flex items-center">
+            <button className="px-4 py-2 bg-gray-200 rounded-lg" 
                     onClick={() => {
                                 const filteredlist = ResList.filter(
                                     (res) => res.info.avgRating > 4.3
@@ -102,8 +77,10 @@ const Body = () => {
                                 }}>
                 Top-Rated Restaurants
             </button>
+            </div>
+            
         </div>
-        <div className="res-container"> 
+        <div className="flex flex-wrap"> 
         {FilterResList.map((rest) => (
             <Link
             className="link-res"
